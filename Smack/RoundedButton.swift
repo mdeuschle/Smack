@@ -8,14 +8,26 @@
 
 import UIKit
 
+@IBDesignable
+
 class RoundedButton: UIButton {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBInspectable var corderRadius: CGFloat = 3.0 {
+        didSet {
+            self.layer.cornerRadius = corderRadius
+        }
     }
-    */
 
+    override func awakeFromNib() {
+        self.setUpView()
+    }
+
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        self.setUpView()
+    }
+
+    func setUpView() {
+        self.layer.cornerRadius = corderRadius
+    }
 }

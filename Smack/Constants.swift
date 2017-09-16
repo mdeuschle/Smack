@@ -10,6 +10,8 @@ import Foundation
 
 typealias Completion = (_ success: Bool) -> ()
 
+let Header = ["Content-Type": "application/json; charset=utf-8"]
+
 enum SegueString: String {
     case toLogin = "toLogin"
     case toCreateAccount = "toCreateAccount"
@@ -25,4 +27,5 @@ enum AuthKey: String {
 enum URLString: String {
     case url = "https://chattyslackapp.herokuapp.com/v1/"
     case urlRegister = "https://chattyslackapp.herokuapp.com/v1/account/register"
+    case urlLogin = "https://chattyslackapp.herokuapp.com/v1/account/login"
 }

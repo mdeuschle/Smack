@@ -169,7 +169,7 @@
                                     <action selector="closeTapped:" destination="aNK-ja-Hh7" eventType="touchUpInside" id="7RM-4x-Uhl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvF-IM-X1X">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvF-IM-X1X" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="36" y="217.5" width="303" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -305,6 +305,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="chooseAvatarTapped:" destination="Iu8-KX-ODG" eventType="touchUpInside" id="4n7-cH-D8u"/>
                                     <action selector="dontHaveAccountTapped:" destination="aNK-ja-Hh7" eventType="touchUpInside" id="NiP-Zn-id4"/>
                                 </connections>
                             </button>
@@ -382,7 +383,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmJ-Zb-Pk5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmJ-Zb-Pk5" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="36" y="603" width="303" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -392,6 +393,9 @@
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupButtonTapped:" destination="Iu8-KX-ODG" eventType="touchUpInside" id="B1x-PX-Ku9"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="YLh-Zn-DJn">
                                 <rect key="frame" x="137" y="281" width="100" height="100"/>
@@ -411,6 +415,7 @@
                                 </state>
                                 <connections>
                                     <action selector="dontHaveAccountTapped:" destination="aNK-ja-Hh7" eventType="touchUpInside" id="rZd-Wd-Vpz"/>
+                                    <action selector="generateBackgroundColorTapped:" destination="Iu8-KX-ODG" eventType="touchUpInside" id="BT4-Rs-CSc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -438,6 +443,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="wBz-Ab-Pbf" id="wcK-eW-WHd"/>
+                        <outlet property="passwordTextField" destination="Q9f-H9-eY5" id="SQO-xa-8s6"/>
+                        <outlet property="profileImageView" destination="YLh-Zn-DJn" id="vof-Lc-amC"/>
+                        <outlet property="userNameTextField" destination="BRA-YD-78p" id="X7r-bU-ZRg"/>
                         <segue destination="sA2-u1-A9H" kind="unwind" identifier="toChannelVC" unwindAction="unwindeToChannelVCWithSegue:" id="DEU-zs-ZW9"/>
                     </connections>
                 </viewController>
