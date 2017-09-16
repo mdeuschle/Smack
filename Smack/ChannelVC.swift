@@ -15,6 +15,7 @@ class ChannelVC: UIViewController {
         super.viewDidLoad()
 
     }
+    @IBAction func unwindeToChannelVC(segue: UIStoryboardSegue){}
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: SegueString.toLogin.rawValue, sender: nil)
     }

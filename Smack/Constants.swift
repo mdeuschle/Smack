@@ -8,6 +8,21 @@
 
 import Foundation
 
+typealias Completion = (_ success: Bool) -> ()
+
 enum SegueString: String {
     case toLogin = "toLogin"
+    case toCreateAccount = "toCreateAccount"
+    case toChannelVC = "toChannelVC"
+}
+
+enum AuthKey: String {
+    case email = "email"
+    case token = "token"
+    case isLoggedIn = "isLoggedIn"
+}
+
+enum URLString: String {
+    case url = "https://chattyslackapp.herokuapp.com/v1/"
+    case urlRegister = "https://chattyslackapp.herokuapp.com/v1/account/register"
 }
