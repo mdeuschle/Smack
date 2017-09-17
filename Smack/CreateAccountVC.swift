@@ -21,7 +21,13 @@ class CreateAccountVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.shared.avatarName != "" {
+            profileImageView.image = UIImage(named: UserDataService.shared.avatarName)
+            avatarName = UserDataService.shared.avatarName
+        }
     }
 
     @IBAction func unwindToChannelVC(_ sender: Any) {
