@@ -28,4 +28,5 @@ enum URLString: String {
     case url = "https://chattyslackapp.herokuapp.com/v1/"
     case urlRegister = "https://chattyslackapp.herokuapp.com/v1/account/register"
     case urlLogin = "https://chattyslackapp.herokuapp.com/v1/account/login"
+    case urlUserAdd = "https://chattyslackapp.herokuapp.com/v1/user/add"
 }

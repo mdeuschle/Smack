@@ -16,6 +16,9 @@ class CreateAccountVC: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var profileImageView: UIImageView!
 
+    var avatarName = "defaultName"
+    var avatarColor = "[0.5, 0.5, 0.5, 1]"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,11 +43,20 @@ class CreateAccountVC: UIViewController {
             return
         }
 
-        AuthService.shared.createUsers(email: email, password: password) { (success) in
+        guard let name = userNameTextField.text, userNameTextField.text != nil else {
+            return
+        }
+
+        AuthService.shared.registerUser(email: email, password: password) { (success) in
             if success {
-                AuthService.shared.loginUser(email: email, password: password) { (loginSuccess) in
-                    if loginSuccess {
-                        print("LOGIN SUCCESS! \(AuthService.shared.token)")
+                AuthService.shared.loginUser(email: email, password: password) { (success) in
+                    if success {
+                        AuthService.shared.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor) { (success) in
+                            if success {
+                                print("NAME: \(UserDataService.shared.name), COLOR: \(UserDataService.shared.avatarColor)")
+                                self.performSegue(withIdentifier: SegueString.toChannelVC.rawValue, sender: nil)
+                            }
+                        }
                     }
                 }
             }
