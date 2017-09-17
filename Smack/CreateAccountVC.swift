@@ -29,6 +29,7 @@ class CreateAccountVC: UIViewController {
     }
 
     @IBAction func chooseAvatarTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: SegueString.toAvatarPicker.rawValue, sender: nil)
     }
 
     @IBAction func generateBackgroundColorTapped(_ sender: UIButton) {

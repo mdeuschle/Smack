@@ -16,6 +16,7 @@ enum SegueString: String {
     case toLogin = "toLogin"
     case toCreateAccount = "toCreateAccount"
     case toChannelVC = "toChannelVC"
+    case toAvatarPicker = "toAvatarPicker"
 }
 
 enum AuthKey: String {
