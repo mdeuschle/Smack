@@ -11,6 +11,8 @@ import Foundation
 typealias Completion = (_ success: Bool) -> ()
 
 let Header = ["Content-Type": "application/json; charset=utf-8"]
+let PlaceholderColor = #colorLiteral(red: 0.3492529392, green: 0.7451983094, blue: 0.7409211397, alpha: 0.4654467282)
+let NotifUserDataDidChange = Notification.Name("notUserDataDidChange")
 
 enum SegueString: String {
     case toLogin = "toLogin"

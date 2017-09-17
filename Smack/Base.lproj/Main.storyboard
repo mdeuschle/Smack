@@ -63,7 +63,7 @@
                                 </constraints>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="cIe-q5-3Fy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="cIe-q5-3Fy" customClass="CircleView" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="28" y="571" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="JlB-co-1aC"/>
@@ -277,7 +277,7 @@
                         <viewControllerLayoutGuide type="top" id="0bU-dd-Yg3"/>
                         <viewControllerLayoutGuide type="bottom" id="Owl-of-fdu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="X8l-kS-4a9" customClass="GradientView" customModule="Smack" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="X8l-kS-4a9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -302,7 +302,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Choose Avatar">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="chooseAvatarTapped:" destination="Iu8-KX-ODG" eventType="touchUpInside" id="4n7-cH-D8u"/>
@@ -326,7 +326,7 @@
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeg-HN-jXp">
                                                 <rect key="frame" x="0.0" y="34" width="303" height="1"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="uLE-Tc-bn8"/>
                                                 </constraints>
@@ -347,7 +347,7 @@
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-ef-WkD">
                                                 <rect key="frame" x="0.0" y="34" width="303" height="1"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Lcc-V5-Tae"/>
                                                 </constraints>
@@ -368,7 +368,7 @@
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66R-Ve-g4U">
                                                 <rect key="frame" x="0.0" y="34" width="303" height="1"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="SEF-ec-8Mw"/>
                                                 </constraints>
@@ -397,7 +397,7 @@
                                     <action selector="signupButtonTapped:" destination="Iu8-KX-ODG" eventType="touchUpInside" id="B1x-PX-Ku9"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="YLh-Zn-DJn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="YLh-Zn-DJn" customClass="CircleView" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="137" y="281" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="7iX-b8-fXi"/>
@@ -411,13 +411,17 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Generate Background Color">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dontHaveAccountTapped:" destination="aNK-ja-Hh7" eventType="touchUpInside" id="rZd-Wd-Vpz"/>
                                     <action selector="generateBackgroundColorTapped:" destination="Iu8-KX-ODG" eventType="touchUpInside" id="BT4-Rs-CSc"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ox5-M1-UOc">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.27058823529999998" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -440,12 +444,15 @@
                             <constraint firstItem="Rrl-8p-3bo" firstAttribute="top" secondItem="8db-Ys-kbf" secondAttribute="bottom" constant="20" id="hlB-9M-71W"/>
                             <constraint firstItem="bcG-Qv-2mw" firstAttribute="top" secondItem="YLh-Zn-DJn" secondAttribute="bottom" constant="12" id="ihm-Dr-Ebd"/>
                             <constraint firstItem="zTO-SP-d4z" firstAttribute="top" secondItem="0bU-dd-Yg3" secondAttribute="bottom" constant="8" id="mTs-rI-cUv"/>
+                            <constraint firstItem="ox5-M1-UOc" firstAttribute="centerX" secondItem="X8l-kS-4a9" secondAttribute="centerX" id="o5g-Qc-ZdA"/>
+                            <constraint firstItem="ox5-M1-UOc" firstAttribute="centerY" secondItem="X8l-kS-4a9" secondAttribute="centerY" constant="-100" id="ppZ-ib-9aq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="wBz-Ab-Pbf" id="wcK-eW-WHd"/>
                         <outlet property="passwordTextField" destination="Q9f-H9-eY5" id="SQO-xa-8s6"/>
                         <outlet property="profileImageView" destination="YLh-Zn-DJn" id="vof-Lc-amC"/>
+                        <outlet property="spinner" destination="ox5-M1-UOc" id="guU-cV-ewk"/>
                         <outlet property="userNameTextField" destination="BRA-YD-78p" id="X7r-bU-ZRg"/>
                         <segue destination="sA2-u1-A9H" kind="unwind" identifier="toChannelVC" unwindAction="unwindeToChannelVCWithSegue:" id="DEU-zs-ZW9"/>
                         <segue destination="e03-q3-3jP" kind="show" identifier="toAvatarPicker" id="aol-YT-Erj"/>
