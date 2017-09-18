@@ -35,6 +35,7 @@ enum URLString: String {
     case urlLogin = "https://chattyslackapp.herokuapp.com/v1/account/login"
     case urlUserAdd = "https://chattyslackapp.herokuapp.com/v1/user/add"
     case urlUserByEmil = "https://chattyslackapp.herokuapp.com/v1/user/byEmail/"
+    case urlGetChannel = "https://chattyslackapp.herokuapp.com/v1/channel"
 }
 
 enum ReusableCell: String {
