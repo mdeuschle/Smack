@@ -29,4 +29,15 @@ class UserDataService {
     func setAvatarName(avatarName: String) {
         self.avatarName = avatarName
     }
+
+    func logoutUser() {
+        id = ""
+        avatarColor = ""
+        avatarName = ""
+        email = ""
+        name = ""
+        AuthService.shared.isLoggedIn = false
+        AuthService.shared.token = ""
+        AuthService.shared.email = ""
+    }
 }

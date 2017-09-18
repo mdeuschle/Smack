@@ -97,12 +97,5 @@ class CreateAccountVC: UIViewController {
                 }
             }
         }
-        
-        
-        
-        
     }
-    
-    
-    
 }
