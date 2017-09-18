@@ -18,6 +18,11 @@ class ChannelVC: UIViewController {
         channelTableView.delegate = self
         channelTableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userUpdated(_:)), name: NotifUserDataDidChange, object: nil)
+        SocketService.shared.getChannel { (success) in
+            if success {
+                self.channelTableView.reloadData()
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -73,8 +78,7 @@ extension ChannelVC: UITableViewDelegate, UITableViewDataSource {
             return MessageCell()
         }
         let message = ChannelService.shared.channels[indexPath.row]
-        cell.messageLabel.text = message.channelTitle
-
+        cell.configChannelCell(channel: message)
         return cell
     }
 

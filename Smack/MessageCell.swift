@@ -27,7 +27,6 @@ class MessageCell: UITableViewCell {
 
     func configChannelCell(channel: Channel) {
         let title = channel.channelTitle ?? ""
-        messageLabel.text = "#" + title
+        messageLabel.text = "#\(title)"
     }
-
 }

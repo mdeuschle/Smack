@@ -22,6 +22,7 @@
 		A82EC3541F7055A20071CC6A /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82EC3531F7055A20071CC6A /* MessageCell.swift */; };
 		A82EC3571F705F8C0071CC6A /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82EC3551F705F8C0071CC6A /* CreateChannelVC.swift */; };
 		A82EC3581F705F8C0071CC6A /* CreateChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82EC3561F705F8C0071CC6A /* CreateChannelVC.xib */; };
+		A82EC35A1F707D400071CC6A /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82EC3591F707D400071CC6A /* SocketService.swift */; };
 		A854AE161F6DADDF007F3ACE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A854AE151F6DADDF007F3ACE /* AuthService.swift */; };
 		A8B4F3EC1F631B0E0040B9E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B4F3EB1F631B0E0040B9E3 /* AppDelegate.swift */; };
 		A8B4F3F11F631B0E0040B9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B4F3EF1F631B0E0040B9E3 /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 		A82EC3531F7055A20071CC6A /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		A82EC3551F705F8C0071CC6A /* CreateChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelVC.swift; sourceTree = "<group>"; };
 		A82EC3561F705F8C0071CC6A /* CreateChannelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateChannelVC.xib; sourceTree = "<group>"; };
+		A82EC3591F707D400071CC6A /* SocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		A854AE151F6DADDF007F3ACE /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A89ECFBB3BA6EC9EBB94D101 /* Pods-SmackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmackTests/Pods-SmackTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8B4F3E81F631B0E0040B9E3 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				A854AE151F6DADDF007F3ACE /* AuthService.swift */,
 				A82EC3411F6DE8C40071CC6A /* UserDataService.swift */,
 				A82EC34F1F701E050071CC6A /* ChannelService.swift */,
+				A82EC3591F707D400071CC6A /* SocketService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A82EC35A1F707D400071CC6A /* SocketService.swift in Sources */,
 				A82EC34D1F6F4C530071CC6A /* ProfileVC.swift in Sources */,
 				A8B4F5A41F6340280040B9E3 /* ChatVC.swift in Sources */,
 				A82EC3441F6EE2690071CC6A /* AvatarVC.swift in Sources */,
