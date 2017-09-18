@@ -18,7 +18,15 @@ class ChannelVC: UIViewController {
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        setUpUserInfo()
+    }
+
     func userUpdated(_ notification: Notification) {
+        setUpUserInfo()
+    }
+
+    func setUpUserInfo() {
         if AuthService.shared.isLoggedIn {
             loginButton.setTitle(UserDataService.shared.name, for: .normal)
             profileImage.image = UIImage(named: UserDataService.shared.avatarName)
@@ -30,6 +38,7 @@ class ChannelVC: UIViewController {
     }
 
     @IBAction func unwindeToChannelVC(segue: UIStoryboardSegue){}
+
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         if AuthService.shared.isLoggedIn {
             let profileVC = ProfileVC()

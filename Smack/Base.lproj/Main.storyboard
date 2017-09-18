@@ -180,6 +180,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginTapped:" destination="aNK-ja-Hh7" eventType="touchUpInside" id="IRo-pW-iFU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZW-BJ-aBo">
                                 <rect key="frame" x="36" y="269.5" width="303" height="27"/>
@@ -244,6 +247,9 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="uKD-G7-56T">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -252,17 +258,22 @@
                             <constraint firstAttribute="trailingMargin" secondItem="CFD-ad-Xey" secondAttribute="trailing" constant="20" id="DNs-3n-Euv"/>
                             <constraint firstItem="TxT-SC-9VU" firstAttribute="top" secondItem="wxw-D6-iSf" secondAttribute="bottom" constant="34" id="HQQ-Gy-0VS"/>
                             <constraint firstItem="dZW-BJ-aBo" firstAttribute="leading" secondItem="tuG-VJ-kLN" secondAttribute="leadingMargin" constant="20" id="MGN-U3-8Sa"/>
+                            <constraint firstItem="uKD-G7-56T" firstAttribute="centerX" secondItem="tuG-VJ-kLN" secondAttribute="centerX" id="OwH-rc-P95"/>
                             <constraint firstItem="dZW-BJ-aBo" firstAttribute="top" secondItem="qvF-IM-X1X" secondAttribute="bottom" constant="8" id="X2T-Wo-Xw7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SOc-61-0vv" secondAttribute="trailing" constant="12" id="XDI-0N-B0G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qvF-IM-X1X" secondAttribute="trailing" constant="20" id="Zv6-5m-w8k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dZW-BJ-aBo" secondAttribute="trailing" constant="20" id="gU1-Dd-uXI"/>
                             <constraint firstItem="SOc-61-0vv" firstAttribute="top" secondItem="wxw-D6-iSf" secondAttribute="bottom" constant="12" id="iPS-F6-H5O"/>
+                            <constraint firstItem="uKD-G7-56T" firstAttribute="centerY" secondItem="tuG-VJ-kLN" secondAttribute="centerY" id="nIq-RA-b7J"/>
                             <constraint firstItem="qvF-IM-X1X" firstAttribute="top" secondItem="CFD-ad-Xey" secondAttribute="bottom" constant="20" id="nhU-80-PvJ"/>
                             <constraint firstItem="CFD-ad-Xey" firstAttribute="leading" secondItem="tuG-VJ-kLN" secondAttribute="leadingMargin" constant="20" id="tJJ-77-ffm"/>
                             <constraint firstItem="CFD-ad-Xey" firstAttribute="top" secondItem="TxT-SC-9VU" secondAttribute="bottom" constant="20" id="v0b-9i-cnf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordTextField" destination="aw6-tk-yLk" id="thQ-Ao-56D"/>
+                        <outlet property="spinner" destination="uKD-G7-56T" id="lxM-BQ-Y2H"/>
+                        <outlet property="usernameTextField" destination="rtC-li-Lpj" id="Dnj-xG-ghd"/>
                         <segue destination="Iu8-KX-ODG" kind="show" identifier="toCreateAccount" id="2th-rl-0V2"/>
                     </connections>
                 </viewController>
