@@ -10,10 +10,13 @@ import UIKit
 
 class ChannelVC: UIViewController {
 
+    @IBOutlet var channelTableView: UITableView!
     @IBOutlet var profileImage: CircleView!
     @IBOutlet var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        channelTableView.delegate = self
+        channelTableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userUpdated(_:)), name: NotifUserDataDidChange, object: nil)
     }
 
@@ -48,3 +51,36 @@ class ChannelVC: UIViewController {
         }
     }
 }
+
+extension ChannelVC: UITableViewDelegate, UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ChannelService.shared.channels.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReusableCell.channelCell.rawValue) as? MessageCell else {
+            return MessageCell()
+        }
+        let message = ChannelService.shared.channels[indexPath.row]
+        cell.messageLabel.text = message.channelTitle
+
+        return cell
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+

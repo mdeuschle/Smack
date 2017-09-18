@@ -40,4 +40,5 @@ enum URLString: String {
 
 enum ReusableCell: String {
     case avatarCell = "AvatarCell"
+    case channelCell = "ChannelCell"
 }
