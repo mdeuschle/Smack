@@ -62,6 +62,9 @@
                                     <constraint firstAttribute="width" constant="32" id="fCF-Cl-3oP"/>
                                 </constraints>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="addChannelTapped:" destination="KIJ-W2-vkh" eventType="touchUpInside" id="qho-5E-gcy"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="cIe-q5-3Fy" customClass="CircleView" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="28" y="571" width="75" height="75"/>

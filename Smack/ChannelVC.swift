@@ -41,6 +41,12 @@ class ChannelVC: UIViewController {
 
     @IBAction func unwindeToChannelVC(segue: UIStoryboardSegue){}
 
+    @IBAction func addChannelTapped(_ sender: UIButton) {
+        let createChannelVC = CreateChannelVC()
+        createChannelVC.modalPresentationStyle = .custom
+        present(createChannelVC, animated: true, completion: nil)
+    }
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         if AuthService.shared.isLoggedIn {
             let profileVC = ProfileVC()
