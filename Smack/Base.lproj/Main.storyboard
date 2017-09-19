@@ -73,7 +73,7 @@
                                     <constraint firstAttribute="height" constant="75" id="b9I-iP-XrK"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-ak-rMR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-ak-rMR">
                                 <rect key="frame" x="0.0" y="136" width="375" height="415"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -633,6 +633,7 @@
                     </view>
                     <connections>
                         <outlet property="menuButton" destination="jHB-ng-XgB" id="XBp-Yy-OFo"/>
+                        <outlet property="titleLabel" destination="chO-Fp-Q4R" id="6yF-UZ-cfl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZm-Ko-Vq1" userLabel="First Responder" sceneMemberID="firstResponder"/>

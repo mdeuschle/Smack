@@ -27,11 +27,13 @@ class CreateChannelVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func createChannelTapped(_ sender: UIButton) {
-        guard let channelName = userNameTestField.text, userNameTestField.text != "" else { return }
-        guard let channelDesc = descriptionTextField.text else { return }
-        SocketService.shared.addChannel(channelName: channelName, channelDescription: channelDesc) { (success) in
-            if success {
-                self.dismiss(animated: true, completion: nil)
+        if AuthService.shared.isLoggedIn {
+            guard let channelName = userNameTestField.text, userNameTestField.text != "" else { return }
+            guard let channelDesc = descriptionTextField.text else { return }
+            SocketService.shared.addChannel(channelName: channelName, channelDescription: channelDesc) { (success) in
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }

@@ -14,7 +14,11 @@ let Header = ["Content-Type": "application/json; charset=utf-8"]
 let bearerHeader = ["Authorization": "Bearer \(AuthService.shared.token)",
     "Content-Type": "application/json; charset=utf-8"]
 let PlaceholderColor = #colorLiteral(red: 0.3492529392, green: 0.7451983094, blue: 0.7409211397, alpha: 0.4654467282)
+
+// NOTIFS
 let NotifUserDataDidChange = Notification.Name("notUserDataDidChange")
+let NotifChannelsLoaded = Notification.Name("notifChannelsLoaded")
+let NotifChannelSelected = Notification.Name("notifChannelSelected")
 
 enum SegueString: String {
     case toLogin = "toLogin"

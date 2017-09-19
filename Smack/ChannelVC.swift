@@ -18,6 +18,7 @@ class ChannelVC: UIViewController {
         channelTableView.delegate = self
         channelTableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userUpdated(_:)), name: NotifUserDataDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NotifChannelsLoaded, object: nil)
         SocketService.shared.getChannel { (success) in
             if success {
                 self.channelTableView.reloadData()
@@ -33,6 +34,10 @@ class ChannelVC: UIViewController {
         setUpUserInfo()
     }
 
+    func channelsLoaded(_ notification: Notification) {
+        channelTableView.reloadData()
+    }
+
     func setUpUserInfo() {
         if AuthService.shared.isLoggedIn {
             loginButton.setTitle(UserDataService.shared.name, for: .normal)
@@ -41,6 +46,7 @@ class ChannelVC: UIViewController {
             loginButton.setTitle("Login", for: .normal)
             profileImage.image = #imageLiteral(resourceName: "menuProfileIcon")
             profileImage.backgroundColor = UIColor.clear
+            channelTableView.reloadData()
         }
     }
 
@@ -79,7 +85,15 @@ extension ChannelVC: UITableViewDelegate, UITableViewDataSource {
         }
         let message = ChannelService.shared.channels[indexPath.row]
         cell.configChannelCell(channel: message)
+        cell.selectionStyle = .none
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = ChannelService.shared.channels[indexPath.row]
+        ChannelService.shared.selectedChannel = channel
+        NotificationCenter.default.post(name: NotifChannelSelected, object: nil)
+        revealViewController().revealToggle(animated: true)
     }
 
 }

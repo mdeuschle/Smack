@@ -13,7 +13,7 @@ import SwiftyJSON
 class ChannelService {
 
     static let shared = ChannelService()
-
+    var selectedChannel: Channel?
     var channels = [Channel]()
 
     func getChannelData(completion: @escaping Completion) {
@@ -28,6 +28,7 @@ class ChannelService {
                         let channel = Channel(channelTitle: name, channelDescription: description, id: id)
                         self.channels.append(channel)
                     }
+                    NotificationCenter.default.post(name: NotifChannelsLoaded, object: nil)
                     completion(true)
                 }
 
@@ -36,10 +37,8 @@ class ChannelService {
                 print(response.result.error as Any)
             }
         }
-
-
     }
-
-
-
+    func removeAllChannels() {
+        channels.removeAll()
+    }
 }
