@@ -40,5 +40,6 @@ class UserDataService {
         AuthService.shared.token = ""
         AuthService.shared.email = ""
         ChannelService.shared.removeAllChannels()
+        ChannelService.shared.removeAllMessages()
     }
 }

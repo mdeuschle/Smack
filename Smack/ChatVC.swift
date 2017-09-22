@@ -10,6 +10,7 @@ import UIKit
 
 class ChatVC: UIViewController {
 
+    @IBOutlet var sendButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var chatTextField: UITextField!
@@ -19,6 +20,11 @@ class ChatVC: UIViewController {
         super.viewDidLoad()
         messageTableView.delegate = self
         messageTableView.dataSource = self
+        chatTextField.delegate = self
+        sendButton.isHidden = true
+        let indentView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        chatTextField.leftView = indentView
+        chatTextField.leftViewMode = .always
         messageTableView.estimatedRowHeight = 80
         messageTableView.rowHeight = UITableViewAutomaticDimension
         view.bindToKeyboard()
@@ -59,6 +65,7 @@ class ChatVC: UIViewController {
             onLoginGetMessage()
         } else {
             titleLabel.text = "Please Login"
+            messageTableView.reloadData()
         }
     }
 
@@ -105,12 +112,12 @@ class ChatVC: UIViewController {
                 if success {
                     self.chatTextField.text = ""
                     self.chatTextField.resignFirstResponder()
+                    self.sendButton.isHidden = true
                 }
             })
         }
     }
 }
-
 
 extension ChatVC: UITableViewDelegate, UITableViewDataSource {
 
@@ -129,6 +136,15 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         let message = ChannelService.shared.messages[indexPath.row]
         cell.config(message: message)
         return cell
+    }
+}
+
+extension ChatVC: UITextFieldDelegate {
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text != nil {
+            sendButton.isHidden = false
+        }
     }
 }
 

@@ -624,8 +624,8 @@
                                     <constraint firstItem="chO-Fp-Q4R" firstAttribute="centerY" secondItem="jHB-ng-XgB" secondAttribute="centerY" id="xqo-tx-aOU"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRq-iR-dHS">
-                                <rect key="frame" x="0.0" y="622" width="305" height="45"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRq-iR-dHS">
+                                <rect key="frame" x="8" y="622" width="301" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="t03-j9-CY3"/>
                                 </constraints>
@@ -710,13 +710,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kRq-iR-dHS" firstAttribute="leading" secondItem="6qG-5g-hKb" secondAttribute="leading" id="1ur-Ek-tdM"/>
+                            <constraint firstItem="kRq-iR-dHS" firstAttribute="leading" secondItem="6qG-5g-hKb" secondAttribute="leading" constant="8" id="1ur-Ek-tdM"/>
                             <constraint firstItem="hV8-1b-EnL" firstAttribute="leading" secondItem="6qG-5g-hKb" secondAttribute="leading" id="2Cy-u4-jKa"/>
                             <constraint firstAttribute="trailing" secondItem="hV8-1b-EnL" secondAttribute="trailing" id="4Aw-Gr-PUQ"/>
                             <constraint firstItem="PrC-gQ-Hqr" firstAttribute="top" secondItem="yXl-Sw-kYm" secondAttribute="bottom" constant="8" id="8qh-9O-p0x"/>
                             <constraint firstItem="kRq-iR-dHS" firstAttribute="top" secondItem="EEY-4E-GbO" secondAttribute="bottom" constant="30" id="ADA-nQ-cIm"/>
                             <constraint firstItem="PrC-gQ-Hqr" firstAttribute="top" secondItem="kRq-iR-dHS" secondAttribute="bottom" id="D34-6g-txG"/>
-                            <constraint firstItem="yXl-Sw-kYm" firstAttribute="leading" secondItem="kRq-iR-dHS" secondAttribute="trailing" constant="8" id="I3g-Du-FMf"/>
+                            <constraint firstItem="yXl-Sw-kYm" firstAttribute="leading" secondItem="kRq-iR-dHS" secondAttribute="trailing" constant="4" id="I3g-Du-FMf"/>
                             <constraint firstAttribute="trailing" secondItem="EEY-4E-GbO" secondAttribute="trailing" id="ZQ3-7O-cvj"/>
                             <constraint firstItem="EEY-4E-GbO" firstAttribute="leading" secondItem="6qG-5g-hKb" secondAttribute="leading" id="cOk-7K-Iuk"/>
                             <constraint firstItem="hV8-1b-EnL" firstAttribute="top" secondItem="6qG-5g-hKb" secondAttribute="top" id="dvG-Au-nPX"/>
@@ -728,6 +728,7 @@
                         <outlet property="chatTextField" destination="kRq-iR-dHS" id="Tax-hJ-zq3"/>
                         <outlet property="menuButton" destination="jHB-ng-XgB" id="XBp-Yy-OFo"/>
                         <outlet property="messageTableView" destination="EEY-4E-GbO" id="WCJ-Fp-HsF"/>
+                        <outlet property="sendButton" destination="yXl-Sw-kYm" id="OMJ-WP-Cbs"/>
                         <outlet property="titleLabel" destination="chO-Fp-Q4R" id="6yF-UZ-cfl"/>
                     </connections>
                 </viewController>
