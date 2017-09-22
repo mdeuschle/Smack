@@ -31,6 +31,18 @@ class ChatVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange), name: NotifUserDataDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NotifChannelSelected, object: nil)
 
+        SocketService.shared.getChatMessage { (success) in
+            if success {
+                self.messageTableView.reloadData()
+                if !ChannelService.shared.messages.isEmpty {
+                    let index = IndexPath(row: ChannelService.shared.messages.count - 1, section: 0)
+                    self.messageTableView.scrollToRow(at: index, at: .bottom, animated: false)
+                }
+            } else {
+                print("Unable to get messages")
+            }
+        }
+
         if AuthService.shared.isLoggedIn {
             AuthService.shared.findUserByEmail(completion: { (success) in
                 NotificationCenter.default.post(name: NotifUserDataDidChange, object: nil)
@@ -77,8 +89,6 @@ class ChatVC: UIViewController {
         guard let channelID = ChannelService.shared.selectedChannel?.id else { return }
         ChannelService.shared.getAllMessagesForChannel(channelID: channelID) { (success) in
             if success {
-                print("MESSAGES: \(ChannelService.shared.messages)")
-
                 self.messageTableView.reloadData()
             } else {
                 print("No success")

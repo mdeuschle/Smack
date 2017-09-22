@@ -49,6 +49,25 @@ class SocketService: NSObject {
         socket.emit("newMessage", messageBody, userID, channelID, user.name, user.avatarName, user.avatarColor)
         completion(true)
     }
+
+    func getChatMessage(completion: @escaping Completion) {
+        socket.on("messageCreated") { (dataArray, ack) in
+            guard let messageBody = dataArray[0] as? String else { return }
+            guard let channelID = dataArray[2] as? String else { return }
+            guard let userName = dataArray[3] as? String else { return }
+            guard let userAvatar = dataArray[4] as? String else { return }
+            guard let id = dataArray[6] as? String else { return }
+            guard let timeStamp = dataArray[7] as? String else { return }
+            if channelID == ChannelService.shared.selectedChannel?.id && AuthService.shared.isLoggedIn {
+                let newMessage = Message(message: messageBody, userName: userName, channelID: channelID, userAvatar: userAvatar, id: id, timeStamp: timeStamp)
+                ChannelService.shared.messages.append(newMessage)
+                completion(true)
+            } else {
+                print("CHANNEL ID DOES NOT MATCH: \(channelID)")
+                completion(false)
+            }
+        }
+    }
 }
 
 
