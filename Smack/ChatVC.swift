@@ -19,6 +19,8 @@ class ChatVC: UIViewController {
         super.viewDidLoad()
         messageTableView.delegate = self
         messageTableView.dataSource = self
+        messageTableView.estimatedRowHeight = 80
+        messageTableView.rowHeight = UITableViewAutomaticDimension
         view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
         view.addGestureRecognizer(tap)
@@ -108,10 +110,6 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ChannelService.shared.messages.count
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -677,7 +677,7 @@
                                                     <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMT-xn-O40">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a message" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMT-xn-O40">
                                                     <rect key="frame" x="89" y="35" width="270" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -687,6 +687,7 @@
                                             <constraints>
                                                 <constraint firstItem="yXH-EN-JZJ" firstAttribute="top" secondItem="Ez4-Q0-ARK" secondAttribute="top" id="1sL-pH-Qqa"/>
                                                 <constraint firstItem="yXH-EN-JZJ" firstAttribute="leading" secondItem="Ez4-Q0-ARK" secondAttribute="trailing" constant="8" id="2TQ-yx-F9e"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="FMT-xn-O40" secondAttribute="bottom" constant="19" id="AKS-pa-5G3"/>
                                                 <constraint firstItem="AJu-BH-M2V" firstAttribute="centerY" secondItem="yXH-EN-JZJ" secondAttribute="centerY" id="CWF-3P-vEV"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="AJu-BH-M2V" secondAttribute="trailing" constant="8" id="IHQ-pq-RMk"/>
                                                 <constraint firstItem="Ez4-Q0-ARK" firstAttribute="top" secondItem="zA7-s0-Bsk" secondAttribute="topMargin" constant="2" id="Ucg-o3-SYb"/>
