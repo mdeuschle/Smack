@@ -38,14 +38,14 @@ class CreateAccountVC: UIViewController {
 
     func setUpPlaceholder() {
         spinner.isHidden = true
-        userNameTextField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSForegroundColorAttributeName : PlaceholderColor])
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSForegroundColorAttributeName : PlaceholderColor])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName : PlaceholderColor])
+        userNameTextField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor : PlaceholderColor])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor : PlaceholderColor])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor : PlaceholderColor])
         let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
 
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 

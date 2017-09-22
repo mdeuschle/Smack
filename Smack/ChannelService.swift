@@ -15,6 +15,7 @@ class ChannelService {
     static let shared = ChannelService()
     var selectedChannel: Channel?
     var channels = [Channel]()
+    var messages = [Message]()
 
     func getChannelData(completion: @escaping Completion) {
         Alamofire.request(URLString.urlGetChannel.rawValue, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: bearerHeader).responseJSON { (response) in
@@ -38,7 +39,53 @@ class ChannelService {
             }
         }
     }
+
+    func getAllMessagesForChannel(channelID: String, completion: @escaping Completion) {
+        Alamofire.request("\(URLString.urlGetMessage.rawValue)\(channelID)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: bearerHeader).responseJSON { (response) in
+            if response.result.error == nil {
+                self.removeAllMessages()
+                guard let data = response.data else { return }
+                if let json = JSON(data: data).array {
+                    for item in json {
+                        let messageBody = item["messageBody"].stringValue
+                        let channelID = item["channelID"].stringValue
+                        let id = item["_id"].stringValue
+                        let userName = item["userName"].stringValue
+                        let userAvatar = item["userAvatar"].stringValue
+                        let timeStamp = item["timeStamp"].stringValue
+                        let message = Message(message: messageBody,
+                                              userName: userName,
+                                              channelID: channelID,
+                                              userAvatar: userAvatar,
+                                              id: id,
+                                              timeStamp: timeStamp)
+                        self.messages.append(message)
+                    }
+                    print("MESSAGES: \(self.messages)")
+                    completion(true)
+                }
+            } else {
+                print("MESSAGE ERROR: \(response.result.error as Any)")
+                completion(false)
+            }
+        }
+    }
+
     func removeAllChannels() {
         channels.removeAll()
     }
+
+    func removeAllMessages() {
+        messages.removeAll()
+    }
 }
+
+
+
+
+
+
+
+
+
+

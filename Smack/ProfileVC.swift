@@ -29,7 +29,7 @@ class ProfileVC: UIViewController {
         backgroundView.addGestureRecognizer(tap)
     }
 
-    func dismissView() {
+    @objc func dismissView() {
         dismiss(animated: true, completion: nil)
     }
 

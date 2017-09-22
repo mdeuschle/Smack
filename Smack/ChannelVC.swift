@@ -30,11 +30,11 @@ class ChannelVC: UIViewController {
         setUpUserInfo()
     }
 
-    func userUpdated(_ notification: Notification) {
+    @objc func userUpdated(_ notification: Notification) {
         setUpUserInfo()
     }
 
-    func channelsLoaded(_ notification: Notification) {
+    @objc func channelsLoaded(_ notification: Notification) {
         channelTableView.reloadData()
     }
 

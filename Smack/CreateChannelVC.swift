@@ -19,7 +19,7 @@ class CreateChannelVC: UIViewController {
         backgroundView.addGestureRecognizer(tap)
     }
 
-    func dismissKeyboard(_ recognizer: UITapGestureRecognizer) {
+    @objc func dismissKeyboard(_ recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
 

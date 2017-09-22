@@ -23,7 +23,10 @@
 		A82EC3571F705F8C0071CC6A /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82EC3551F705F8C0071CC6A /* CreateChannelVC.swift */; };
 		A82EC3581F705F8C0071CC6A /* CreateChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82EC3561F705F8C0071CC6A /* CreateChannelVC.xib */; };
 		A82EC35A1F707D400071CC6A /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82EC3591F707D400071CC6A /* SocketService.swift */; };
+		A82EC35C1F70D9930071CC6A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82EC35B1F70D9930071CC6A /* Message.swift */; };
 		A854AE161F6DADDF007F3ACE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A854AE151F6DADDF007F3ACE /* AuthService.swift */; };
+		A8A21AC81F747AF90098460B /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A21AC71F747AF90098460B /* KeyboardBoundView.swift */; };
+		A8A21ACA1F7484F10098460B /* MsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A21AC91F7484F10098460B /* MsgCell.swift */; };
 		A8B4F3EC1F631B0E0040B9E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B4F3EB1F631B0E0040B9E3 /* AppDelegate.swift */; };
 		A8B4F3F11F631B0E0040B9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B4F3EF1F631B0E0040B9E3 /* Main.storyboard */; };
 		A8B4F3F31F631B0E0040B9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B4F3F21F631B0E0040B9E3 /* Assets.xcassets */; };
@@ -74,8 +77,11 @@
 		A82EC3551F705F8C0071CC6A /* CreateChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelVC.swift; sourceTree = "<group>"; };
 		A82EC3561F705F8C0071CC6A /* CreateChannelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateChannelVC.xib; sourceTree = "<group>"; };
 		A82EC3591F707D400071CC6A /* SocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		A82EC35B1F70D9930071CC6A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A854AE151F6DADDF007F3ACE /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A89ECFBB3BA6EC9EBB94D101 /* Pods-SmackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmackTests/Pods-SmackTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8A21AC71F747AF90098460B /* KeyboardBoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		A8A21AC91F7484F10098460B /* MsgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgCell.swift; sourceTree = "<group>"; };
 		A8B4F3E81F631B0E0040B9E3 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B4F3EB1F631B0E0040B9E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B4F3F01F631B0E0040B9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -258,6 +264,8 @@
 				A82EC3531F7055A20071CC6A /* MessageCell.swift */,
 				A82EC34C1F6F4C520071CC6A /* ProfileVC.xib */,
 				A82EC3561F705F8C0071CC6A /* CreateChannelVC.xib */,
+				A8A21AC71F747AF90098460B /* KeyboardBoundView.swift */,
+				A8A21AC91F7484F10098460B /* MsgCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				A82EC3511F701E230071CC6A /* Channel.swift */,
+				A82EC35B1F70D9930071CC6A /* Message.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -350,24 +359,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Matt Deuschle";
 				TargetAttributes = {
 					A8B4F3E71F631B0E0040B9E3 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 3DKZWJ5854;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					A8B4F3FB1F631B0E0040B9E3 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 3DKZWJ5854;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A8B4F3E71F631B0E0040B9E3;
 					};
 					A8B4F4061F631B0E0040B9E3 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 3DKZWJ5854;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A8B4F3E71F631B0E0040B9E3;
 					};
@@ -565,18 +576,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A21AC81F747AF90098460B /* KeyboardBoundView.swift in Sources */,
 				A82EC35A1F707D400071CC6A /* SocketService.swift in Sources */,
 				A82EC34D1F6F4C530071CC6A /* ProfileVC.swift in Sources */,
 				A8B4F5A41F6340280040B9E3 /* ChatVC.swift in Sources */,
 				A82EC3441F6EE2690071CC6A /* AvatarVC.swift in Sources */,
 				A82EC3401F6DD1C70071CC6A /* RoundedButton.swift in Sources */,
 				A82EC3521F701E230071CC6A /* Channel.swift in Sources */,
+				A82EC35C1F70D9930071CC6A /* Message.swift in Sources */,
 				A8B4F3EC1F631B0E0040B9E3 /* AppDelegate.swift in Sources */,
 				A82EC3421F6DE8C40071CC6A /* UserDataService.swift in Sources */,
 				A8B4F5AF1F637B8F0040B9E3 /* CreateAccountVC.swift in Sources */,
 				A854AE161F6DADDF007F3ACE /* AuthService.swift in Sources */,
 				A82EC3571F705F8C0071CC6A /* CreateChannelVC.swift in Sources */,
 				A8B4F5AD1F6373CB0040B9E3 /* LoginVC.swift in Sources */,
+				A8A21ACA1F7484F10098460B /* MsgCell.swift in Sources */,
 				A82EC3501F701E060071CC6A /* ChannelService.swift in Sources */,
 				A8B4F5A81F634CE40040B9E3 /* GradientView.swift in Sources */,
 				A82EC3461F6EED780071CC6A /* AvatarCell.swift in Sources */,
@@ -649,7 +663,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -657,7 +673,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -700,7 +720,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -708,7 +730,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -748,7 +774,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smack-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -765,7 +792,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.matt.deuschle.Smack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smack-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -780,7 +808,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matt.deuschle.SmackTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smack.app/Smack";
 			};
 			name = Debug;
@@ -796,7 +825,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matt.deuschle.SmackTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smack.app/Smack";
 			};
 			name = Release;
@@ -811,7 +841,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matt.deuschle.SmackUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Smack;
 			};
 			name = Debug;
@@ -826,7 +857,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matt.deuschle.SmackUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Smack;
 			};
 			name = Release;
